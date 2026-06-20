@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
           <div className="flex gap-2">
             <Mail />
-            <Link href={email} target="_blank" rel="noopener" className="hover:underline">
+            <Link href={`mailto:${email}`} className="hover:underline">
               {email}
             </Link>
           </div>

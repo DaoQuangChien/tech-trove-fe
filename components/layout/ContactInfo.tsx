@@ -71,7 +71,7 @@ const ContactInfo = () => {
               {email && (
                 <div className="flex items-center gap-2">
                   <Mail className="size-4 text-sky-400" />
-                  <Link href={email} target="_blank" rel="noopener" className="hover:underline">
+                  <Link href={`mailto:${email}`} className="hover:underline">
                     {email}
                   </Link>
                 </div>
