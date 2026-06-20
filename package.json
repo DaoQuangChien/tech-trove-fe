@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
+    "dev:production": "node scripts/with-env.mjs .env.production next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

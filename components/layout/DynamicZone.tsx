@@ -2,7 +2,8 @@ import dynamic from "next/dynamic";
 
 import { DynamicZoneComponent } from "@/types";
 
-const HeroSection = dynamic(() => import("./sections/HeroSection"), { ssr: true });
+import HeroSection from "./sections/HeroSection";
+
 const BestSellerSection = dynamic(() => import("./sections/BestSellerSection"), { ssr: true });
 const ProductsByCategorySection = dynamic(() => import("./sections/ProductsByCategorySection"), {
   ssr: true,

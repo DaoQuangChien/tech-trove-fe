@@ -28,11 +28,14 @@ const HeroSection = (props: HeroSectionType) => {
   return (
     <section data-name="HeroSection" className="relative h-screen">
       <video
+        key={props.video.url}
         src={getMediaUrl(props.video.url)}
         className="pointer-events-none size-full object-cover object-center"
         autoPlay
         muted
         loop
+        playsInline
+        preload="auto"
       />
       <div className="content-block absolute top-1/2 left-1/2 flex -translate-1/2 flex-col gap-10">
         <div className="flex flex-col gap-4 text-center">

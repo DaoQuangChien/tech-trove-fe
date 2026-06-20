@@ -34,7 +34,7 @@ const RootLayout = async ({ children }: Readonly<PropsWithChildren>) => {
     getLocales(),
   ]);
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning

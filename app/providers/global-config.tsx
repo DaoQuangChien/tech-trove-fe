@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, PropsWithChildren, useContext } from "react";
+import { createContext, PropsWithChildren, useContext, useMemo } from "react";
 
 import { Category } from "@/types/category";
 import { GlobalConfig } from "@/types/globalConfig";
@@ -19,11 +19,13 @@ interface Props extends PropsWithChildren {
 const GlobalConfigContext = createContext<GlobalConfigContextValue | null>(null);
 
 export const GlobalConfigProvider = ({ globalConfigContext, children }: Props) => {
-  return (
-    <GlobalConfigContext.Provider value={{ ...globalConfigContext }}>
-      {children}
-    </GlobalConfigContext.Provider>
+  const { globalConfig, categories, locales } = globalConfigContext;
+  const value = useMemo(
+    () => ({ globalConfig, categories, locales }),
+    [globalConfig, categories, locales]
   );
+
+  return <GlobalConfigContext.Provider value={value}>{children}</GlobalConfigContext.Provider>;
 };
 
 export const useGlobalConfig = () => {
